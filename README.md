@@ -16,11 +16,13 @@ Projeto de WebApp para o gerenciamento de jogos, criado durante as aulas do curs
 - HTML
 - CSS
 - JavaScript
+- AspNet Core 8
+- Bootstrap 5.3
 
 ## Como executar
 
 ```bash
-git clone (https://github.com/Shaymonr/WebDev/)
+git clone https://github.com/Shaymonr/GerenciadorDeJogos/
 ```
 
 Abra o arquivo `index.html`.
