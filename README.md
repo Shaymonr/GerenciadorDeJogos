@@ -4,7 +4,7 @@ Projeto de WebApp para o gerenciamento de jogos, criado durante as aulas do curs
 
 ## Preview
 
-![preview](./assets/preview.png)
+![preview]([./assets/preview.png](https://gerenciadordejogos.onrender.com))
 
 ## Funcionalidades
 
