@@ -2,9 +2,14 @@
 
 Projeto de WebApp para o gerenciamento de jogos, criado durante as aulas do curso de .NetCore 6 para fixação do conteúdo.
 
+## Ferramentas
+
+- VisualStudio 2022 (Desenvolvimento)
+- GitHub (Versionamento)
+
 ## Preview
 
-![preview](./assets/preview.png)
+![preview]([./assets/preview.png](https://gerenciadordejogos.onrender.com))
 
 ## Funcionalidades
 
