@@ -1,6 +1,14 @@
+using GerenciadorDeJogos.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllersWithViews();
+
+// Configura o contexto do Entity Framework para usar SQL Server com a string de conexão definida no appsettings.json
+builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("AppDbContext") ?? throw new InvalidOperationException("Connection string 'REDACTED_PROJECT_NAMEContext' not found."))));
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
