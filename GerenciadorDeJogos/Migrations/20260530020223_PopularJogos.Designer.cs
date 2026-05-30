@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GerenciadorDeJogos.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260529235955_PopularCategorias")]
-    partial class PopularCategorias
+    [Migration("20260530020223_PopularJogos")]
+    partial class PopularJogos
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

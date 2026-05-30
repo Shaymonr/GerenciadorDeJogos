@@ -1,10 +1,17 @@
 using GerenciadorDeJogos.Context;
 using Microsoft.EntityFrameworkCore;
+using GerenciadorDeJogos.Repositories;
+using GerenciadorDeJogos.Repositories.Interfaces;
 
+// Configura o builder para criar a aplicação web, definindo os serviços e o pipeline de processamento de requisições
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Registra os repositórios de categorias e jogos para injeção de dependência, permitindo que as classes que dependem desses repositórios possam receber suas instâncias automaticamente
+builder.Services.AddTransient<ICategoriaRepository, CategoriaRepository>();   
+builder.Services.AddTransient<IJogosRepository, JogosRepository>();
 
 // Configura o contexto do Entity Framework para usar SQL Server com a string de conexão definida no appsettings.json
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -21,6 +28,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+// Configura o pipeline de processamento de requisições, definindo como a aplicação deve responder a diferentes tipos de requisições e erros    
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

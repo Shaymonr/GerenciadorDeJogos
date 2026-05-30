@@ -26,11 +26,11 @@ namespace GerenciadorDeJogos.Models
         public string JogoDescricao { get; set; }
 
         // Atributos de validação para a imagem do jogo
-        [Display(Name = "Url da Imagem do Jogo")]
+        [Display(Name = "Imagem do Jogo")]
         public string JogoImagem { get; set; }
 
         // Atributos de validação para a miniatura do jogo
-        [Display(Name = "Url da Miniatura do Jogo")]
+        [Display(Name = "Miniatura do Jogo")]
         public string JogoMiniatura { get; set; }
 
         // Atributos de validação para o status do jogo
