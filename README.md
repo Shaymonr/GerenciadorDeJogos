@@ -8,7 +8,7 @@ Projeto de WebApp para o gerenciamento de jogos, criado durante as aulas do curs
 - GitHub (Versionamento)
 
 ## Preview
-
+(ainda não configurado)
 ![preview]([./assets/preview.png](https://gerenciadordejogos.onrender.com))
 
 ## Funcionalidades
@@ -23,6 +23,7 @@ Projeto de WebApp para o gerenciamento de jogos, criado durante as aulas do curs
 - JavaScript
 - AspNet Core 8
 - Bootstrap 5.3
+- Entity Framework Core
 
 ## Como executar
 
