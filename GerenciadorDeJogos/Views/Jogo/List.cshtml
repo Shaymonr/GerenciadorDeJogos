@@ -1,55 +1,42 @@
 ﻿@model JogosViewModel
-@*  IEnumerable<GerenciadorDeJogos.Models.Jogo> *@
 
-<h1>@ViewData["Titulo"]</h1>
+@*  @model IEnumerable<GerenciadorDeJogos.Models.Jogo> //Método que definia o model da view antes da aplicação do JogosViewModel*@
+
+<h1>@Model.CategoriaAtual</h1>
 <hr />
 <p>
-    <a asp-action="Create">Adicionar Jogo</a>
+    <a asp-action="Create">Adicionar Jogo</a><!--Botão destacado para adição de itens.-->
 </p>
 <!--Inicio da Tabela-->
 <table class="table">
     <!--Cabeçalho da tabela-->
     <thead>
-         <tr>
+            <!--
+                Nota: em termos de praticidade, seria muito mais eficiente a utilização de textos fixos diretamente
+                no HTML, porém, para fins didáticos, escolhi fazer com que o Razor descubra que a propriedade 
+                pertence a um jogo.
+
+            -->
+        <tr>
             <th class="w-25">
-                @Html.DisplayNameFor(model => model)
+                @Html.DisplayNameFor(model => model.Jogos.First().JogoMiniatura)
             </th>
             <th class="w-auto">
-                @Html.DisplayNameFor(model => model)
+                @Html.DisplayNameFor(model => model.Jogos.First().JogoNome)
             </th>
             <th class="w-auto">
-                @Html.DisplayNameFor(model => model)
+                @Html.DisplayNameFor(model => model.Jogos.First().StatusJogo)
             </th>
             <th class="w-auto">
-                @Html.DisplayNameFor(model => model)
-                   
-                </th>
- 
-        </tr> 
+                @Html.DisplayNameFor(model => model.Jogos.First().Categoria)
+            </th>
+        </tr>
     </thead>
     <!--Corpo da Tabela-->
     <tbody>
-@foreach (var item in Model.Jogos) {
-        <tr>
-                <td class="w-auto">
-                    <img src="@Url.Content(item.JogoMiniatura)" class="d-block w-25" />
-                </td>
-                <td class="w-auto">
-                @Html.DisplayFor(modelItem => item.JogoNome)
-            </td>
-                <td class="w-auto">
-                @Html.DisplayFor(modelItem => item.StatusJogo)
-            </td>
-                <td class="w-auto">
-                @Html.DisplayFor(modelItem => item.Categoria.CategoriaNome)
-            </td>
-            <td>
-                <!--Botões de CRUD-->
-                <a asp-action="Edit" asp-route-id="@item.JogoId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.JogoId">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.JogoId">Excluir</a>
-            </td>
-        </tr>
-}
+        @foreach (var jogo in Model.Jogos)
+        {
+           <partial name ="_JogosResumo" for = "@jogo" />
+        }
     </tbody>
 </table>
