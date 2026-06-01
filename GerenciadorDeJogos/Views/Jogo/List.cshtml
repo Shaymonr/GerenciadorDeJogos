@@ -1,9 +1,7 @@
-﻿@model IEnumerable<GerenciadorDeJogos.Models.Jogo>
+﻿@model JogosViewModel
+@*  IEnumerable<GerenciadorDeJogos.Models.Jogo> *@
 
 <h1>@ViewData["Titulo"]</h1>
-<hr />
-<h4>@ViewBag.Total</h4>
-<h6>@ViewBag.TotalJogos</h6>
 <hr />
 <p>
     <a asp-action="Create">Adicionar Jogo</a>
@@ -12,25 +10,26 @@
 <table class="table">
     <!--Cabeçalho da tabela-->
     <thead>
-        <tr>
+         <tr>
             <th class="w-25">
-                @Html.DisplayNameFor(model => model.JogoMiniatura)
+                @Html.DisplayNameFor(model => model)
             </th>
             <th class="w-auto">
-                @Html.DisplayNameFor(model => model.JogoNome)
+                @Html.DisplayNameFor(model => model)
             </th>
             <th class="w-auto">
-                @Html.DisplayNameFor(model => model.StatusJogo)
+                @Html.DisplayNameFor(model => model)
             </th>
             <th class="w-auto">
-                @Html.DisplayNameFor(model => model.Categoria)
-            </th>
-            <th></th>
-        </tr>
+                @Html.DisplayNameFor(model => model)
+                   
+                </th>
+ 
+        </tr> 
     </thead>
     <!--Corpo da Tabela-->
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Jogos) {
         <tr>
                 <td class="w-auto">
                     <img src="@Url.Content(item.JogoMiniatura)" class="d-block w-25" />
