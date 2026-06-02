@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\JogoLojaControler.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Views\Shared\_Carousel.cshtml.css" />
   </ItemGroup>
 

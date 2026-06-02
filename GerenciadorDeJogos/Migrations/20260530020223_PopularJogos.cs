@@ -8,6 +8,7 @@ namespace GerenciadorDeJogos.Migrations
     public partial class PopularJogos : Migration
     {
         /// <inheritdoc />
+        // Método responsável por aplicar as alterações no banco de dados, inserindo registros de jogos na tabela Jogos
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.Sql("INSERT INTO Jogos (JogoNome, JogoDescricao,StatusJogo, CategoriaId) VALUES ('God Of War', 'Um jogo de ação e aventura.', 'Completo', 2)");
@@ -20,6 +21,7 @@ namespace GerenciadorDeJogos.Migrations
         }
 
         /// <inheritdoc />
+      // Método responsável por reverter as alterações no banco de dados, removendo os registros de jogos inseridos na tabela Jogos
         protected override void Down(MigrationBuilder migrationBuilder)
         {
 

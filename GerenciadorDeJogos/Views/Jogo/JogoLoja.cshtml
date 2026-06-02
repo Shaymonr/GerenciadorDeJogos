@@ -1,0 +1,39 @@
+﻿@* 
+Aqui temos a view da loja, onde o usuário pode visualizar os jogos disponíveis para compra.
+*@
+@model JogosViewModel
+
+
+<h1>Loja</h1>
+<hr />
+<table class="table">
+    <!--Cabeçalho da tabela-->
+    <thead>
+        <!--
+            Nota: em termos de praticidade, seria muito mais eficiente a utilização de textos fixos diretamente
+            no HTML, porém, para fins didáticos, escolhi fazer dessa forma.
+
+        -->
+        <tr>
+            <th class="w-25">
+                @Html.DisplayNameFor(model => model.Jogos.First().JogoMiniatura)
+            </th>
+            <th class="w-auto">
+                @Html.DisplayNameFor(model => model.Jogos.First().JogoNome)
+            </th>
+            <th class="w-auto">
+                @Html.DisplayNameFor(model => model.Jogos.First().StatusJogo)
+            </th>
+            <th class="w-auto">
+                @Html.DisplayNameFor(model => model.Jogos.First().Categoria)
+            </th>
+        </tr>
+    </thead>
+    <!--Corpo da Tabela-->
+    <tbody>
+        @foreach (var jogo in Model.Jogos)
+        {
+            <partial name="_JogosResumo" for="@jogo" />
+        }
+    </tbody>
+</table>

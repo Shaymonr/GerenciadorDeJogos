@@ -1,4 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿// Esse código é uma migração do Entity Framework Core, que é usada para criar as tabelas "Categorias" e "Jogos" no banco de dados.
+// A migração define as colunas, chaves primárias e relacionamentos entre as tabelas. O método "Up" é responsável por aplicar as
+// alterações no banco de dados, enquanto o método "Down" reverte essas alterações, removendo as tabelas criadas.
+
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -8,6 +12,8 @@ namespace GerenciadorDeJogos.Migrations
     public partial class MigracaoInicial : Migration
     {
         /// <inheritdoc />
+       // Método responsável por aplicar as alterações no banco de dados, criando as tabelas Categorias e Jogos, definindo suas colunas,
+       // chaves primárias e relacionamentos
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -54,6 +60,7 @@ namespace GerenciadorDeJogos.Migrations
         }
 
         /// <inheritdoc />
+        // Método responsável por reverter as alterações no banco de dados, removendo as tabelas Jogos e Categorias
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

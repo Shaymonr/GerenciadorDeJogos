@@ -1,4 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿// Esse código define a classe Categoria, que representa uma categoria de jogos no sistema de gerenciamento de jogos.
+// A classe inclui propriedades para o ID da categoria, o nome da categoria e uma lista de jogos relacionados a essa categoria.
+// A classe também utiliza atributos de validação para garantir que os dados sejam inseridos corretamente.
+
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GerenciadorDeJogos.Models

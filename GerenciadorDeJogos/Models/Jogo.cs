@@ -1,6 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿//Esse arquivo define o modelo de dados para a entidade "Jogo" em um sistema de gerenciamento de jogos.
+//Ele utiliza data annotations para validação e mapeamento com o banco de dados, e inclui propriedades
+//como nome, preço, descrição, imagem, miniatura, status e uma chave estrangeira para a categoria do jogo.
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
 namespace GerenciadorDeJogos.Models
 {
     // Modelo de dados para a entidade Jogo, representando um jogo no sistema
@@ -19,6 +22,12 @@ namespace GerenciadorDeJogos.Models
         [Display(Name ="Nome do Jogo")]
         [StringLength(80,MinimumLength = 3, ErrorMessage = "O nome do Jogo deve ter entre 3 e 80 caracteres!")]
         public string JogoNome { get; set; }
+
+        //Atributos de validação para o preço do jogo
+        [Required(ErrorMessage = "O Preço do Jogo deve ser informado!")]
+        [Display(Name = "Preço do Jogo")]
+        [Precision(10, 2)]
+        public decimal JogoPreco { get; set; }
 
         // Atributos de validação para a descrição do jogo
         [Required(ErrorMessage = "A descrição do Jogo deve ser informada!")]

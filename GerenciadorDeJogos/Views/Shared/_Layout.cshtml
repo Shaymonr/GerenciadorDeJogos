@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@* 
+Esse é o layout principal da aplicação, onde as páginas serão renderizadas dentro do @RenderBody(). 
+Ele inclui a barra de navegação, rodapé e os links para os arquivos CSS e JavaScript necessários para o funcionamento do site.
+*@
+
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="utf-8" />
@@ -27,6 +32,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Jogo" asp-action="List">Jogos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Jogo" asp-action="JogoLoja">Loja</a>
                         </li>
                     </ul>
                 </div>

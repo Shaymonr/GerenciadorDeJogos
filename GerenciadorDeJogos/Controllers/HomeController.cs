@@ -1,3 +1,9 @@
+//Esse arquivo define o controlador HomeController para o aplicativo de gerenciamento de jogos.
+//Ele inclui ações para as páginas principais do site, como a página inicial (Index) e a página
+//de privacidade (Privacy). O controlador também possui uma ação para lidar com erros, que retorna
+//uma view de erro com informações sobre a solicitação. O controlador utiliza o serviço de logging
+//para registrar informações relevantes durante a execução das ações.
+
 using System.Diagnostics;
 using GerenciadorDeJogos.Models;
 using Microsoft.AspNetCore.Mvc;

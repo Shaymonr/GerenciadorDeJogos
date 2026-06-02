@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using GerenciadorDeJogos.Repositories.Interfaces;
 using GerenciadorDeJogos.ViewModels;
+
 namespace GerenciadorDeJogos.Controllers
 {
     // Controlador responsável por gerenciar as ações relacionadas aos jogos
@@ -13,25 +14,24 @@ namespace GerenciadorDeJogos.Controllers
         {
             _jogosRepository = jogosRepository;
         }
-
+        // Ação que exibe a loja de jogos, utilizando o repositório para obter os jogos disponíveis
         public IActionResult List()
         {
-            /*
-            ViewData["Titulo"] = "Todos os Jogos";
-            ViewBag.Total = "Total De Jogos";
-
-            var totalJogos = jogos.Count();
-            var jogos = _jogosRepository.Jogos;
-
-            ViewBag.TotalJogos = totalJogos;
-            return View(jogos);
-            */
-            
             var JogosViewModel = new JogosViewModel();
             JogosViewModel.Jogos = _jogosRepository.Jogos;
             JogosViewModel.CategoriaAtual = "Categoria Atual";
             return View(JogosViewModel);
-        
+
+        }
+
+        // Ação que exibe a loja de jogos, utilizando o repositório para obter os jogos disponíveis
+        public IActionResult JogoLoja()
+        {
+            var JogosViewModel = new JogosViewModel();
+            JogosViewModel.Jogos = _jogosRepository.Jogos;
+            JogosViewModel.CategoriaAtual = "Categoria Atual";
+            return View(JogosViewModel);
+
         }
     }
 }

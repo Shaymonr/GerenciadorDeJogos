@@ -2,6 +2,16 @@ using GerenciadorDeJogos.Context;
 using Microsoft.EntityFrameworkCore;
 using GerenciadorDeJogos.Repositories;
 using GerenciadorDeJogos.Repositories.Interfaces;
+//Nota de estudo:
+//O código a seguir é o ponto de entrada da aplicação ASP.NET Core, onde a configuração dos serviços e
+//do pipeline de processamento de requisições é realizada. Ele utiliza o padrão de injeção de dependência
+//para registraros repositórios e configura o Entity Framework para acessar o banco de dados SQL Server.
+//A classe Program é responsável por configurar e iniciar a aplicação, definindo os serviços
+//necessários e o comportamento da aplicação em diferentes ambientes (desenvolvimento, produção, etc.).
+//O método Main é o ponto de entrada da aplicação, onde o builder é configurado e a aplicação é executada.
+//Antes era dividida em dois arquivos, Program.cs e Startup.cs, mas a partir do .NET 6, a configuração foi
+//unificada em um único arquivo, simplificando o processo de configuração da aplicação.
+
 
 // Configura o builder para criar a aplicação web, definindo os serviços e o pipeline de processamento de requisições
 var builder = WebApplication.CreateBuilder(args);

@@ -1,4 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿// Esse arquivo define a classe de contexto do Entity Framework para o aplicativo de gerenciamento de jogos.
+// Ele inclui as propriedades DbSet para as entidades do modelo, como Categoria, Jogo e CarrinhoComprasItens,
+// permitindo que o Entity Framework gerencie as operações de banco de dados para essas entidades.
+// O construtor da classe recebe as opções de configuração do contexto, que são passadas para a classe base DbContext.
+using Microsoft.EntityFrameworkCore;
+using GerenciadorDeJogos.Models;
 
 
 namespace GerenciadorDeJogos.Context
@@ -12,8 +17,8 @@ namespace GerenciadorDeJogos.Context
         }
 
         // Propriedades DbSet para as entidades do modelo
-        public DbSet<Models.Categoria> Categorias { get; set; }
-        public DbSet<Models.Jogo> Jogos { get; set; }
-    
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Jogo> Jogos { get; set; }
+        public DbSet<CarrinhoComprasItens> carrinhoCompras { get; set; }
     }
 }

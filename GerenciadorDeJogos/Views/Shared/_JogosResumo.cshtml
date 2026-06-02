@@ -1,25 +1,28 @@
 ﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+    Esse é um partial view que exibe um resumo de um jogo, incluindo sua miniatura, nome, status e categoria. 
+    Ele é utilizado em outras partes do site para mostrar uma lista de jogos de forma resumida. 
+    Cada linha da tabela representa um jogo, e inclui links para editar, visualizar detalhes ou excluir o jogo.
 *@
 @model Jogo
+<tr>
 
-    <tr>
-        <td class="w-auto">
-            <img src="@Url.Content(Model.JogoMiniatura)" class="d-block w-25" />
-        </td>
-        <td class="w-auto">
-            @Html.DisplayFor(modelItem => Model.JogoNome)
-        </td>
-        <td class="w-auto">
-            @Html.DisplayFor(modelItem => Model.StatusJogo)
-        </td>
-        <td class="w-auto">
-            @Html.DisplayFor(modelItem => Model.Categoria.CategoriaNome)
-        </td>
-        <td>
-            <!--Botões de edição de itens.-->
-            <a asp-action="Edit" asp-route-id="Model.JogoId">Editar</a> |
-            <a asp-action="Details" asp-route-id="Model.JogoId">Detalhes</a> |
-            <a asp-action="Delete" asp-route-id="Model.JogoId">Excluir</a>
-        </td>
-    </tr>
+    <td class="w-auto">
+        <img src="@Url.Content(Model.JogoMiniatura)" class="d-block w-25" />
+    </td>
+    <td class="w-auto">
+        @Html.DisplayFor(modelItem => Model.JogoNome)
+    </td>
+    <td class="w-auto">
+        @Html.DisplayFor(modelItem => Model.StatusJogo)
+    </td>
+    <td class="w-auto">
+        @Html.DisplayFor(modelItem => Model.Categoria.CategoriaNome)
+    </td>
+    <td>
+        <!--Botões de edição de itens.-->
+        <a asp-action="Edit" asp-route-id="Model.JogoId">Editar</a> |
+        <a asp-action="Details" asp-route-id="Model.JogoId">Detalhes</a> |
+        <a asp-action="Delete" asp-route-id="Model.JogoId">Excluir</a>
+
+    </td>
+</tr>

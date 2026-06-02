@@ -1,4 +1,11 @@
-﻿@model JogosViewModel
+﻿@* 
+    Esta é a view responsável por exibir a lista de jogos. Ela utiliza o modelo JogosViewModel para obter os dados necessários 
+    para renderizar a tabela de jogos. A view inclui um link para adicionar um novo jogo e uma tabela que exibe as informações 
+    dos jogos, como miniatura, nome, status e categoria. Cada linha da tabela é gerada usando um partial view chamado _JogosResumo,
+    que recebe um objeto jogo como parâmetro.
+*@
+
+@model JogosViewModel
 
 @*  @model IEnumerable<GerenciadorDeJogos.Models.Jogo> //Método que definia o model da view antes da aplicação do JogosViewModel*@
 
@@ -11,12 +18,12 @@
 <table class="table">
     <!--Cabeçalho da tabela-->
     <thead>
-            <!--
-                Nota: em termos de praticidade, seria muito mais eficiente a utilização de textos fixos diretamente
-                no HTML, porém, para fins didáticos, escolhi fazer com que o Razor descubra que a propriedade 
-                pertence a um jogo.
+        <!--
+            Nota: em termos de praticidade, seria muito mais eficiente a utilização de textos fixos diretamente
+            no HTML, porém, para fins didáticos, escolhi fazer com que o Razor descubra que a propriedade
+            pertence a um jogo.
 
-            -->
+        -->
         <tr>
             <th class="w-25">
                 @Html.DisplayNameFor(model => model.Jogos.First().JogoMiniatura)
@@ -34,9 +41,9 @@
     </thead>
     <!--Corpo da Tabela-->
     <tbody>
-        @foreach (var jogo in Model.Jogos)
-        {
-           <partial name ="_JogosResumo" for = "@jogo" />
-        }
+            @foreach (var jogo in Model.Jogos)
+            {
+                <partial name="_JogosResumo" for="@jogo" />
+            }
     </tbody>
 </table>
