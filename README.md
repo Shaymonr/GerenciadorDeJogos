@@ -1,6 +1,6 @@
 # GerenciadorDeJogos
 
-Projeto de WebApp para o gerenciamento de jogos, criado durante as aulas do curso de .NetCore 6 para fixação do conteúdo.
+Projeto de WebApp para o gerenciamento de jogos, criado durante as aulas do curso de .NetCore 6 para fixação do conteúdo. Código com muitos comentários por se tratar de um período de aprendizado, onde costumo detalhar o máximo possível para facilitar a minha compreensão do processo como um todo.
 
 ## Ferramentas
 
